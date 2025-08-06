@@ -2,516 +2,153 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Financial Decision Support System Research | PhD Research Project</title>
+    <title>DeSpectra</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-            line-height: 1.6;
-            color: #2c3e50;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            margin: 0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: #181818;
+            color: #f5f5f5;
         }
-
         .container {
-            max-width: 1200px;
+            max-width: 600px;
             margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-            border-bottom: 1px solid rgba(255, 255, 255, 0.18);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .header-content {
+            padding: 0 16px;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            padding: 1rem 0;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #2c3e50;
-            text-decoration: none;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-        }
-
-        nav a {
-            text-decoration: none;
-            color: #2c3e50;
-            font-weight: 500;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: #667eea;
-        }
-
-        .hero {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(20px);
-            border-radius: 20px;
-            margin: 2rem 0;
-            padding: 4rem 2rem;
-            text-align: center;
-            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            color: white;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero .subtitle {
-            font-size: 1.3rem;
-            color: rgba(255, 255, 255, 0.9);
-            margin-bottom: 2rem;
-            font-weight: 300;
-        }
-
-        .researcher-info {
-            background: rgba(255, 255, 255, 0.9);
-            padding: 1.5rem;
-            border-radius: 15px;
-            display: inline-block;
-            margin-top: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-        }
-
-        .researcher-info h2 {
-            color: #2c3e50;
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .researcher-info p {
-            color: #666;
-            font-size: 1rem;
-        }
-
-        .main-content {
-            background: white;
-            margin: 2rem 0;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .section {
-            padding: 3rem 2rem;
-            border-bottom: 1px solid #eee;
-        }
-
-        .section:last-child {
-            border-bottom: none;
-        }
-
-        .section h2 {
-            font-size: 2rem;
-            color: #2c3e50;
-            margin-bottom: 1.5rem;
-            position: relative;
-            padding-bottom: 0.5rem;
-        }
-
-        .section h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 60px;
-            height: 3px;
-            background: linear-gradient(90deg, #667eea, #764ba2);
-            border-radius: 2px;
-        }
-
-        .research-questions {
-            display: grid;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .question-card {
-            background: #f8f9fa;
-            padding: 1.5rem;
-            border-radius: 12px;
-            border-left: 4px solid #667eea;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .question-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-
-        .question-card h3 {
-            color: #2c3e50;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .methods-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .method-card {
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            transition: transform 0.3s ease;
-        }
-
-        .method-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .method-card h3 {
-            color: #2c3e50;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .method-card .icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .outcomes-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .outcome-item {
-            background: rgba(102, 126, 234, 0.1);
-            padding: 1.5rem;
-            border-radius: 12px;
-            border: 1px solid rgba(102, 126, 234, 0.2);
-        }
-
-        .outcome-item h4 {
-            color: #667eea;
-            margin-bottom: 0.5rem;
-            font-size: 1.1rem;
-        }
-
-        .applications {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-        }
-
-        .applications h2 {
-            color: white;
-        }
-
-        .applications h2::after {
-            background: white;
-        }
-
-        .app-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .app-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .app-card:hover {
-            transform: translateY(-3px);
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .app-card h3 {
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
-        }
-
-        footer {
-            background: rgba(44, 62, 80, 0.95);
-            color: white;
-            text-align: center;
-            padding: 2rem 0;
-            margin-top: 2rem;
-        }
-
-        .contact-info {
-            display: flex;
+            min-height: 70vh;
             justify-content: center;
-            gap: 2rem;
-            margin-bottom: 1rem;
-            flex-wrap: wrap;
         }
-
-        .contact-item {
+        .logo {
+            text-align: center;
+            font-size: 2.7rem;
+            font-weight: 700;
+            color: #ffd700;
+            letter-spacing: 2px;
+            margin-top: 80px;
+            margin-bottom: 38px;
+        }
+        .header-nav {
+            width:100%;
+            background: linear-gradient(90deg, rgba(34,34,34,0.92) 60%, rgba(24,24,24,0.92) 100%);
+            padding:0;margin:0;
+            box-shadow:0 2px 8px rgba(44,83,100,0.08);
+            border-bottom: 2px solid #ffd700;
+            font-size: 1.32rem;
+            color: #e3e3e3;
+            margin-bottom: 60px;
+            line-height: 1.7;
+        }
+        .nav-bar {
+            max-width: 1100px;
+            margin: 0 auto;
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            justify-content: space-between;
+            padding: 18px 18px 0 18px;
         }
-
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero .subtitle {
-                font-size: 1.1rem;
-            }
-            
-            .header-content {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            nav ul {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-            
-            .methods-grid,
-            .outcomes-grid,
-            .app-grid {
-                grid-template-columns: 1fr;
-            }
+        .nav-logo {
+            display: flex;
+            align-items: center;
         }
-
-        .animate-fade-in {
-            animation: fadeIn 0.8s ease-in;
+        .nav-logo-icon {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: linear-gradient(135deg,#ffd700 60%,#fff200 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #181818;
+            margin-right: 14px;
         }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        .nav-logo-text {
+            font-size: 1.32rem;
+            font-weight: 700;
+            color: #ffd700;
+            letter-spacing: 2px;
         }
+        .nav-links {
+            display: flex;
+            align-items: center;
+        }
+        .nav-links a {
+            color:#ffd700;text-decoration:none;font-weight:500;font-size:1.22rem;margin-right:42px;transition:color 0.2s;
+        }
+        .nav-links a:last-child { margin-right:0; }
+        .nav-links a:hover { color:#fff200; }
+        
+        .footer {
+            background: #181818;
+            color: #e3e3e3;
+            font-size: 1.08rem;
+            text-align: center;
+            padding: 38px 0 22px 0;
+            margin-top: 56px;
+            letter-spacing: 1px;
+            border-top:1px solid #222;
+            line-height: 1.9;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .footer-links {
+            margin: 18px 0 10px 0;
+        }
+        .footer-links a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 18px;
+            font-size: 1.12rem;
+            cursor: pointer;
+            transition:color 0.2s;
+        }
+        .footer-links a:hover {
+            color:#fff200;
+        }
+   
     </style>
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="#" class="logo">📊 FIDSS Research</a>
-                <nav>
-                    <ul>
-                        <li><a href="#overview">Overview</a></li>
-                        <li><a href="#questions">Core Questions</a></li>
-                        <li><a href="#methods">Methodology</a></li>
-                        <li><a href="#outcomes">Expected Outcomes</a></li>
-                        <li><a href="#applications">Applications</a></li>
-                    </ul>
-                </nav>
+    <div class="header-nav">
+        <div class="nav-bar">
+            <div class="nav-logo">
+                <div class="nav-logo-icon" style="background: linear-gradient(135deg,#ffd700 60%,#fff200 100%); width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px #232a34; margin-right:12px;">
+                    <span style="font-family:'Segoe UI',Arial,sans-serif;font-size:1.7rem;font-weight:700;color:#181818;letter-spacing:1px;">D</span>
+                </div>
+                <div class="nav-logo-text">DeSpectra</div>
+            </div>
+            <div class="nav-links">
+                <a href="spectral_decomposition_technology.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
             </div>
         </div>
-    </header>
-
-    <div class="container">
-        <section class="hero animate-fade-in">
-            <h1>🎯 Multi-Dimensional Financial Decision Support System</h1>
-            <p class="subtitle">Intelligent Trading Decision System Integrating Fundamental Analysis, Market Timing, Catalyst Identification, and Market Structure</p>
-            <div class="researcher-info">
-                <h2>👨‍🎓 PhD Research Project</h2>
-                <p>👨‍🎓 Jian Zhang (张健) | 📧 jzhang138@hawk.iit.edu | 🏫 IIT - PhD Research | 👨‍🏫 Advisor: Professor Yongzhen</p>
-                <p>Focused on developing data-driven financial trading decision support systems to enhance market prediction accuracy and trading efficiency</p>
-            </div>
-        </section>
-
-        <main class="main-content">
-            <section id="overview" class="section">
-                <h2>🔍 Research Overview</h2>
-                <p style="font-size: 1.1rem; color: #555; line-height: 1.8;">
-                    This research focuses on developing a <strong>Financial Information Decision Support System (FIDSS)</strong> that integrates <strong>macroeconomic analysis</strong> (GDP growth rate, inflation rate, interest rates, money supply M2, unemployment rate, consumer confidence index, etc.), <strong>fundamental company analysis</strong> (financial statements, management quality, industry position, growth potential), <strong>trading timing</strong> (technical analysis and price action), <strong>market catalysts</strong> (earnings reports, policy changes), and <strong>market structure</strong> (market trends and liquidity) to provide comprehensive trading decision support for financial traders. The goal is to optimize the generation, execution, and risk management of trading strategies, improving prediction accuracy and market efficiency.
-                </p>
-            </section>
-
-            <section id="questions" class="section">
-                <h2>❓ Core Research Questions</h2>
-                <div class="research-questions">
-                    <div class="question-card">
-                        <h3>1. Multi-Dimensional Data Fusion Architecture</h3>
-                        <p>How to construct an effective heterogeneous financial data fusion framework that achieves semantic alignment and temporal synchronization of macroeconomic, fundamental, technical indicator, catalyst event, and market microstructure data?</p>
-                    </div>
-                    <div class="question-card">
-                        <h3>2. Predictive Model Optimization Theory</h3>
-                        <p>How can hybrid models based on deep learning and reinforcement learning effectively capture the nonlinear dynamic characteristics of financial markets and improve the statistical significance of trading signals across multiple time scales?</p>
-                    </div>
-                    <div class="question-card">
-                        <h3>3. Human-Computer Interaction Cognitive Modeling</h3>
-                        <p>How to design human-computer interaction interfaces that can reduce decision bias and improve information processing efficiency through cognitive load theory and behavioral finance principles?</p>
-                    </div>
-                    <div class="question-card">
-                        <h3>4. Data Quality Control Mechanisms</h3>
-                        <p>Facing the noise, missing data, delays, and manipulation issues in financial data, how to establish adaptive mechanisms for real-time data quality assessment and error correction?</p>
-                    </div>
-                    <div class="question-card">
-                        <h3>5. Algorithmic Trading Ethics Framework</h3>
-                        <p>How to embed fairness, transparency, and interpretability constraints in DSS design to prevent algorithmic bias and systemic risk, ensuring market stability?</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="methods" class="section">
-                <h2>🔬 Research Methods & Technologies</h2>
-                <div class="methods-grid">
-                    <div class="method-card">
-                        <span class="icon">📊</span>
-                        <h3>Macroeconomic Analysis</h3>
-                        <p>Integrating macroeconomic indicators including GDP, inflation rates, interest rates, M2 money supply, unemployment rates, and consumer confidence indices</p>
-                    </div>
-                    <div class="method-card">
-                        <span class="icon">🏢</span>
-                        <h3>Fundamental Analysis</h3>
-                        <p>Evaluating company financial statements, management quality, industry position, and growth potential to build enterprise valuation models</p>
-                    </div>
-                    <div class="method-card">
-                        <span class="icon">⏰</span>
-                        <h3>Trading Timing Assessment</h3>
-                        <p>Combining technical analysis indicators and price action patterns to optimize trade entry and exit timing</p>
-                    </div>
-                    <div class="method-card">
-                        <span class="icon">⚡</span>
-                        <h3>Catalyst Identification</h3>
-                        <p>Monitoring and analyzing market catalysts such as earnings releases, policy changes, and industry events and their impact on prices</p>
-                    </div>
-                    <div class="method-card">
-                        <span class="icon">🌐</span>
-                        <h3>Market Structure Analysis</h3>
-                        <p>Analyzing market trends, liquidity characteristics, trading volume patterns, and market microstructure</p>
-                    </div>
-                    <div class="method-card">
-                        <span class="icon">🤖</span>
-                        <h3>Intelligent Decision Engine</h3>
-                        <p>Applying machine learning and deep learning technologies to integrate multi-dimensional information for trading decision generation</p>
-                    </div>
-                </div>
-            </section>
-
-            <section id="outcomes" class="section">
-                <h2>🎯 Expected Outcomes</h2>
-                <div class="outcomes-grid">
-                    <div class="outcome-item">
-                        <h4>🔧 Multi-Dimensional DSS System</h4>
-                        <p>Complete decision support system prototype integrating fundamentals, timing, catalysts, and market structure</p>
-                    </div>
-                    <div class="outcome-item">
-                        <h4>📈 Trading Success Rate Improvement</h4>
-                        <p>Quantitative assessment and optimization solutions for trading strategy success rates based on multi-dimensional information integration</p>
-                    </div>
-                    <div class="outcome-item">
-                        <h4>🎨 Intelligent Interactive Interface</h4>
-                        <p>User-friendly trading decision interface that balances information complexity with decision efficiency</p>
-                    </div>
-                    <div class="outcome-item">
-                        <h4>📋 Compliance Framework System</h4>
-                        <p>Ethical compliance framework for algorithmic trading and market manipulation risk prevention mechanisms</p>
-                    </div>
-                </div>
-            </section>
-        </main>
-
-        <section id="applications" class="section applications">
-            <h2>🌟 Application Scenarios</h2>
-            <div class="app-grid">
-                <div class="app-card">
-                    <h3>🏢 Institutional Investors</h3>
-                    <p>Providing data-driven portfolio management tools for hedge funds and asset management companies</p>
-                </div>
-                <div class="app-card">
-                    <h3>🏛️ Regulatory Authorities</h3>
-                    <p>Supporting financial market compliance monitoring and analyzing potential risks of data-driven trading</p>
-                </div>
-            </div>
-        </section>
     </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Financial Decision Support System Research Project. Committed to advancing financial market transparency and efficiency.</p>
+    <div class="container">
+        <div class="logo">DeSpectra</div>
+        <div class="tagline">DeSpectra is an investment management firm that employs mathematical and statistical methods in the design and execution of its investment programs.</div>
+    </div>
+    <div class="footer">
+        <div class="footer-links">
+            <a href="spectral_decomposition_technology.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact</a>
         </div>
-    </footer>
-
-    <script>
-        // Smooth scroll navigation
-        document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Scroll animation effects
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = '1';
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, observerOptions);
-
-        // Observe all card elements
-        document.querySelectorAll('.question-card, .method-card, .outcome-item, .app-card').forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            card.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-            observer.observe(card);
-        });
-
-        // Add interactive effects
-        document.querySelectorAll('.method-card').forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.transform = 'translateY(-8px) scale(1.02)';
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateY(-5px) scale(1)';
-            });
-        });
-    </script>
+        <div class="footer-email">Email: info@despectras.com</div>
+        <div class="copyright">&copy; 2025 DeSpectra. All rights reserved.<br>
+        The materials on this website are for illustration and discussion purposes only and do not constitute an offering.<br>
+        An offering may be made only by delivery of a confidential offering memorandum to appropriate investors.<br>
+        PAST PERFORMANCE IS NO GUARANTEE OF FUTURE RESULTS.<br>
+        DeSpectra does not operate any other publicly available website. Other websites purporting to be associated with our firm or our funds are not legitimate.</div>
+    </div>
+    <!-- Contact modal removed, Contact now links to contact.html -->
 </body>
 </html>
