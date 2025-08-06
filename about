@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>About - Spectral Decomposition Technology</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(120deg, #181818 60%, #232a34 100%);
+            color: #f5f5f5;
+        }
+        .header-nav {
+            width:100%;
+            background: linear-gradient(90deg, rgba(34,34,34,0.92) 60%, rgba(24,24,24,0.92) 100%);
+            padding:0;margin:0;
+            box-shadow:0 2px 8px rgba(44,83,100,0.08);
+            border-bottom: 2px solid #ffd700;
+        }
+        .nav-bar {
+            max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:18px 18px 0 18px;
+        }
+        .nav-logo {
+            display:flex;align-items:center;
+        }
+        .nav-logo-icon {
+            background: linear-gradient(135deg,#ffd700 60%,#fff200 100%);
+            width:40px;
+            height:40px;
+            border-radius:50%;
+            display:flex;
+            align-items:center;
+            justify-content:center;
+            box-shadow:0 2px 8px #232a34;
+            margin-right:12px;
+        }
+        .nav-logo-icon span {
+            font-family:'Segoe UI',Arial,sans-serif;
+            font-size:1.7rem;
+            font-weight:700;
+            color:#181818;
+            letter-spacing:1px;
+        }
+        .nav-logo-text {
+            color:#ffd700;
+            font-weight:700;
+            font-size:1.5rem;
+        }
+        .nav-links {
+            display:flex;
+        }
+        .nav-links a {
+            color:#ffd700;
+            text-decoration:none;
+            font-weight:500;
+            font-size:1.22rem;
+            margin-right:42px;
+            transition:color 0.2s;
+        }
+        .nav-links a:last-child { margin-right:0; }
+        .nav-links a:hover {
+            color:#fff200;
+        }
+        .about-container {
+            max-width:700px;
+            margin:56px auto 0 auto;
+            background:linear-gradient(120deg, #232a34 60%, #181818 100%);
+            border-radius:18px;
+            box-shadow:0 8px 40px rgba(44,83,100,0.22);
+            padding:44px 32px 36px 32px;
+        }
+        .about-title {
+            font-size:2.1rem;
+            color:#ffd700;
+            font-weight:700;
+            text-align:center;
+            margin-bottom:28px;
+            letter-spacing:2px;
+            text-shadow:0 2px 8px #232a34;
+        }
+        .about-text {
+            color:#e3e3e3;
+            font-size:1.18rem;
+            line-height:2.1;
+            text-align:left;
+        }
+        .about-text strong {
+            color:#ffd700;
+            font-weight:600;
+            background:linear-gradient(90deg,#ffd700 60%,#fff200 100%);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip:text;
+            text-fill-color:transparent;
+        }
+        .about-text ul {
+            margin:18px 0 0 0;
+            padding-left:22px;
+        }
+        .about-text li {
+            margin-bottom:10px;
+            color:#b3e5fc;
+        }
+        .about-text li strong {
+            color:#ffd700;
+            background:none;
+            -webkit-text-fill-color:initial;
+            text-fill-color:initial;
+        }
+        .footer {
+            background: #181818;
+            color: #b3e5fc;
+            font-size: 1.02rem;
+            text-align: center;
+            padding: 36px 0 18px 0;
+            margin-top: 56px;
+            letter-spacing: 1px;
+            border-top:1px solid #222;
+        }
+        .footer-links {
+            margin: 18px 0 10px 0;
+        }
+        .footer-links a {
+            color: #ffd700;
+            text-decoration: none;
+            font-weight: 500;
+            margin: 0 18px;
+            font-size: 1.12rem;
+            cursor: pointer;
+            transition:color 0.2s;
+        }
+        .footer-links a:hover {
+            color:#fff200;
+        }
+        .footer-email {
+            color: #b3e5fc;
+            font-size: 1.08rem;
+            margin-bottom: 18px;
+        }
+        .copyright {
+            color: #888;
+            font-size: 0.96rem;
+            margin-top: 18px;
+            line-height: 1.7;
+        }
+        @media (max-width: 700px) {
+            .about-container { padding: 18px 4px; }
+            .about-title { font-size:1.3rem; }
+            .about-text { font-size:1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header-nav">
+        <div class="nav-bar">
+            <div class="nav-logo">
+                <div class="nav-logo-icon" style="background: linear-gradient(135deg,#ffd700 60%,#fff200 100%); width:40px; height:40px; border-radius:50%; display:flex; align-items:center; justify-content:center; box-shadow:0 2px 8px #232a34;">
+                    <span style="font-family:'Segoe UI',Arial,sans-serif;font-size:1.7rem;font-weight:700;color:#181818;letter-spacing:1px;">D</span>
+                </div>
+                <div class="nav-logo-text">DeSpectra</div>
+            </div>
+            <div class="nav-links">
+                <a href="spectral_decomposition_technology.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="careers.html">Careers</a>
+                <a href="contact.html">Contact</a>
+            </div>
+        </div>
+    </div>
+    <div class="about-container">
+        <div class="about-title">About DeSpectra</div>
+        <div class="about-text">
+            <p><strong>DeSpectra</strong> is a leading investment management firm dedicated to applying advanced mathematics, statistics, and technology to global financial markets. Our mission is to deliver superior risk-adjusted returns through rigorous research, disciplined execution, and continuous innovation.</p>
+            <p>Founded in 2025, our team consists of multiple PhDs in mathematics, physics, computer science, and related fields. We foster a vibrant culture of collaboration, discipline, and critical analysis, driving deep research and breakthrough discoveries.</p>
+            <ul>
+                <li>Unified, data-driven approach across all investment programs</li>
+                <li>Decades of experience developing and managing proprietary quantitative trading strategies</li>
+                <li>Research database grows by over <strong>40 TB</strong> daily</li>
+                <li><strong>52,000</strong> computer cores, <strong>150 Gbps</strong> global connectivity</li>
+                <li>Redundant computing facilities, each fully capable of supporting our trading operations</li>
+            </ul>
+            <p>We believe that the fusion of mathematics, technology, and domain expertise is the foundation of sustainable success in modern finance.</p>
+        </div>
+    </div>
+    <div class="footer">
+        <div class="footer-links">
+            <a href="spectral_decomposition_technology.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="careers.html">Careers</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <div class="footer-email">Email: info@despectras.com</div>
+        <div class="copyright">&copy; 2025 DeSpectra. All rights reserved.<br>
+        The materials on this website are for illustration and discussion purposes only and do not constitute an offering.<br>
+        An offering may be made only by delivery of a confidential offering memorandum to appropriate investors.<br>
+        PAST PERFORMANCE IS NO GUARANTEE OF FUTURE RESULTS.<br>
+        DeSpectra does not operate any other publicly available website. Other websites purporting to be associated with our firm or our funds are not legitimate.</div>
+    </div>
+</body>
+</html>
